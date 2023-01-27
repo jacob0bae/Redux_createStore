@@ -4,7 +4,7 @@ const createStore = <S, A>(
 ) => {
   let currentReducer = reducer;
   let currentState = preloadedState as S;
-  let currentListeners: (() => void)[] | null;
+  let currentListeners: (() => void)[] = [];
 
   const getState = (): S => {
     return currentState as S;
